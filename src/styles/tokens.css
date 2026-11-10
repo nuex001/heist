@@ -1,0 +1,71 @@
+/* Design Tokens for Heist — High-Contrast White Editorial Neo-Brutalist */
+:root {
+  /* Fonts */
+  --font-display: 'Syne', system-ui, sans-serif;
+  --font-serif: 'Instrument Serif', Georgia, serif;
+  --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  /* Light Paper Surfaces */
+  --bg-canvas: #ffffff;
+  --bg-paper: #faf9f5;
+  --bg-surface: #ffffff;
+  --bg-surface-elevated: #f4f3ee;
+  --bg-surface-hover: #ebe9e1;
+  --bg-inset: #f8f7f3;
+  --bg-glass: rgba(255, 255, 255, 0.94);
+
+  /* Ink & Borders */
+  --ink: #09090b;
+  --ink-soft: #18181b;
+  --text-primary: #09090b;
+  --text-secondary: #3f3f46;
+  --text-muted: #52525b;
+  --text-dim: #71717a;
+
+  --border-ink: #09090b;
+  --border-subtle: #d4d4d8;
+  --border-default: #09090b;
+  --border-strong: #09090b;
+
+  /* Electric Editorial Accents */
+  --accent-near: #00b873;
+  --accent-near-bright: #00e599;
+  --accent-near-bg: #e6fff4;
+  --accent-near-ink: #064e3b;
+
+  --accent-attacker: #ff2e54;
+  --accent-attacker-bg: #fff0f3;
+  --accent-attacker-ink: #881337;
+
+  --accent-yellow: #ffe600;
+  --accent-yellow-bg: #fffbeb;
+  --accent-amber: #d97706;
+  --accent-amber-bg: #fef3c7;
+
+  --accent-thought: #6d28d9;
+  --accent-thought-bg: #f5f3ff;
+
+  --accent-cyan: #0284c7;
+  --accent-cyan-bg: #e0f2fe;
+
+  /* Spacing & Radii */
+  --container-max: 1120px;
+  --radius-xs: 4px;
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+  --radius-pill: 9999px;
+
+  /* Hard Brutalist Shadows */
+  --shadow-xs: 2px 2px 0px #09090b;
+  --shadow-sm: 4px 4px 0px #09090b;
+  --shadow-md: 6px 6px 0px #09090b;
+  --shadow-lg: 8px 8px 0px #09090b;
+  --shadow-robbed: 6px 6px 0px #ff2e54;
+  --shadow-near: 5px 5px 0px #00b873;
+
+  /* Transitions */
+  --ease-snap: cubic-bezier(0.2, 0.9, 0.3, 1);
+  --duration-fast: 140ms;
+}
