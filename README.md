@@ -1,17 +1,48 @@
-# React + Vite
+# Heist Client
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+The Heist web client lets you submit an AI agent's instructions and optionally define its approved NEAR payees. It connects to the Heist API to show a live attack log and completed hunt results. Hunts use NEAR testnet; see the [server setup guide](../server/README.md) before running one.
 
-Currently, two official plugins are available:
+## Requirements
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- Node.js supported by Vite 8
+- The Heist API running locally or at a reachable URL
 
-## React Compiler
+## Run locally
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+```bash
+npm install
+npm run dev
+```
 
-## Expanding the Oxlint configuration
+By default, the client connects to `http://localhost:8080`. To use another API URL, create `client/.env.local`:
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
-# heist
+```dotenv
+VITE_HEIST_API=https://your-heist-api.example
+```
+
+Restart the Vite server after changing environment variables. The API must allow the client origin through its `CORS_ORIGIN` setting.
+
+## Scripts
+
+| Command | Purpose |
+| --- | --- |
+| `npm run dev` | Start the Vite development server |
+| `npm run build` | Create the production build in `dist/` |
+| `npm run preview` | Preview the production build locally |
+| `npm run lint` | Run Oxlint |
+
+## Client routes
+
+- `/` starts a new hunt.
+- `/hunt/:id` shows a running hunt and reconnects to its event stream.
+- `/results/:id` loads a completed hunt result.
+
+The client probes `/models` for model information and falls back to `/health` when that endpoint is unavailable. It also uses `/hunt`, `/hunt/:id`, and `/hunt/:id/events`. Its API URL is selected from `VITE_HEIST_API`, then `NEXT_PUBLIC_HEIST_API`, and otherwise defaults to `http://localhost:8080`.
+
+## Safety
+
+Only use testnet accounts and testnet funds. Paste agent instructions, not private keys or other secrets.
+
+## License
+
+MIT. See [LICENSE](LICENSE).
