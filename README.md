@@ -25,7 +25,7 @@ Edit `.env` and set:
 | Variable | Required | Default | Description |
 | --- | --- | --- | --- |
 | `NEARAI_API_KEY` | Yes | | NEAR AI Cloud API key |
-| `NEARAI_MODEL` | No | `zai-org/GLM-5.1-FP8` | Model used by the attacker |
+| `NEARAI_MODEL` | No | `moonshotai/kimi-k3` | Model used by the attacker |
 | `AGENT_MODEL` | No | `NEARAI_MODEL` | Model used to simulate the tested agent |
 | `HEIST_ACCOUNT` | Yes | | Your funded NEAR testnet bank account |
 | `HEIST_PRIVATE_KEY` | Yes | | Private key for the bank account |
